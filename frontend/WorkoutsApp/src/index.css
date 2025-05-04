@@ -1,0 +1,343 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+
+:root {
+    --primary-color: #1aac83;
+    --error: #e7195a;
+}
+
+header {
+    background: #fff;
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+header .contianer {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color: #333;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.workout-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    position: relative;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+}
+
+label, input {
+    display: block;
+}
+
+input {
+    padding: .7rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1.3rem;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    box-sizing: border-box;
+}
+
+form button {
+    background: var(--primary-color);
+    border: 0;
+    color: #fff;
+    padding: .7rem;
+    font-family: "Robobo,serif";
+    border-radius: .25rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.workout-delete-button {
+    align-self: center;
+    border: none;
+    background: none;
+    color: var(--error);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-and-btn-container {
+    display: flex;
+    justify-content: space-between;
+    background: transparent;
+}
+
+.header-add-workout {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: none;
+    border: none;
+    border-radius: .4rem;
+    color: #1aac83;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.anchor {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.edit {
+    background: none;
+    color: var(--error);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+}
+
+div.error {
+    padding: .7rem;
+    background: #ffefef;
+    border: 1px solid var(--error);
+    border-radius: .25rem;
+    margin: 1.4rem 0;
+}
+
+div .success {
+    padding: 0.7rem;
+    border: 1px solid #1aac83;
+    border-radius: .23rem;
+    color: #1aac83;
+    font-weight: bold;
+    margin: 1.4rem 0;
+}
+
+h4 {
+    color:#1aac83;
+}
+
+.load {
+    font-weight: bold;
+    color: #333;
+}
+
+.reps {
+    font-weight: bold;
+    color: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
+.form-container {
+    display: none; /* Hide the form by default */
+    position: fixed; /* Ensure the form stays fixed on the screen */
+    top: 4rem; /* Adjust the top position */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000; /* Ensure it appears above all other elements */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    transform: translateY(-100%); /* Initially hide the form above the viewport */
+    opacity: 0;
+}
+
+.form-container.visible {
+    display: block; /* Show the form when visible */
+    transform: translateY(0); /* Slide the form into view */
+    opacity: 1;
+}
+
+/*TABLET SYTLES*/
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .home-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .workout-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header a {
+        font-size: 1.2rem;
+    }
+    
+    .header-add-workout {
+        display: block;
+    }
+
+    .btn-group {
+     justify-self: center; 
+     align-items: center;       
+    }
+
+
+    .workout-delete-button {
+        order: 1;
+        right: 0.5rem;
+        font-size: 1.2rem;
+        margin-left: 7rem;
+    }
+
+    .edit {
+        order: 2;
+        align-self: center;
+        font-size: 1.2rem;
+    }
+
+    form button {
+        width: 100%;
+    }
+
+    input {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        top: 4rem; /* Adjust the top position for tablets */
+    }
+
+    .header-add-workout {
+        display: block;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/*MOBILE STYLES*/
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header .contianer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        font-size: 1rem;
+    }
+
+    .home-container {
+        gap: 1rem;
+    }
+
+    .workout-container {
+        padding: 0.5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-add-workout {
+        display: block;
+    }
+
+    h4 {
+        font-size: 1.2rem;
+    }
+
+    .btn-group {
+        justify-self: start;
+    
+    }
+
+    .edit {
+        order: 2;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        
+    }
+
+    input {
+        font-size: 0.9rem;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+
+    div.error, div.success {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        top: 4rem; /* Adjust the top position for mobile devices */
+    }
+
+    .header-add-workout {
+        display: block;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
